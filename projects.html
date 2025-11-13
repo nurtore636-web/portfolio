@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Portfolio | Shakizada Meiirzhan</title>
+
+  <!-- Bootstrap және Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+        <img src="images/logo.jpg" alt="Logo" width="40" height="40" class="me-2">
+        Meiirzhan — Portfolio
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        
+        <span class="navbar-toggler-icon"></span>
+        
+      </button>
+      <!-- Dark/Light режимін ауыстыру батырмасы -->
+<button id="theme-toggle" class="btn btn-light">
+  <i class="bi bi-moon-fill"></i> <!-- Иконка: түнгі режим үшін -->
+</button>
+
+      <div id="menu" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container my-4">
+    <h1 class="section-title">Projects</h1>
+    <div class="row g-3">
+
+      <!-- Project 1 -->
+      <div class="col-md-4">
+        <div class="card project-card h-100">
+          <img src="images/project1.jpg" class="card-img-top" alt="Order Processing System">
+          <div class="card-body">
+            <h5 class="card-title">Order Processing System</h5>
+            <p class="card-text">
+              Interactive front-end prototype with Bootstrap grid and jQuery events.
+            </p>
+            <button class="btn btn-brand" data-bs-toggle="modal" data-bs-target="#projectModal"
+              data-title="Order Processing System"
+              data-img="images/project1.jpg"
+              data-desc="A front-end prototype built with Bootstrap grid and jQuery. Displays a live table of orders with color-coded status badges (Processing, Shipped, Cancelled)."
+              data-tags="HTML, CSS, Bootstrap, jQuery">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4">
+        <div class="card project-card h-100">
+          <img src="images/project2.jpg" class="card-img-top" alt="Pet Adoption DBMS">
+          <div class="card-body">
+            <h5 class="card-title">Pet Adoption DBMS</h5>
+            <p class="card-text">
+              Schema design, 3NF normalization, SQL queries, and simple UI.
+            </p>
+            <button class="btn btn-brand" data-bs-toggle="modal" data-bs-target="#projectModal"
+              data-title="Pet Adoption DBMS"
+              data-img="images/project2.jpg"
+              data-desc="A database management project with 3NF normalization, SQL queries, and a clean interface for viewing pets and adoptions."
+              data-tags="SQL, DBMS, ER Diagram, UI Design">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4">
+        <div class="card project-card h-100">
+          <img src="images/project3.jpg" class="card-img-top" alt="CarPro Website">
+          <div class="card-body">
+            <h5 class="card-title">CarPro Website</h5>
+            <p class="card-text">
+              Responsive multi-page site: gallery, modals, contact form validation.
+            </p>
+            <button class="btn btn-brand" data-bs-toggle="modal" data-bs-target="#projectModal"
+              data-title="CarPro Website"
+              data-img="images/project3.jpg"
+              data-desc="A responsive multi-page car rental website with a gallery, modals, and contact form validation built using Bootstrap and jQuery."
+              data-tags="HTML, CSS, JS, jQuery, Bootstrap">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL (Project Details) -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="pmTitle" class="modal-title">Project</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img id="pmImg" src="" alt="project" class="img-fluid rounded mb-3">
+          <p id="pmDesc"></p>
+          <p><strong>Tags:</strong> <span id="pmTags"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-brand" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>© <span id="y"></span> Meiirzhan • Portfolio</div>
+      <div>Student: <strong>Shakizada Meiirzhan</strong> • Group: <strong>SE-2427</strong></div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="btn btn-accent rounded-pill">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Project Modal Script -->
+  <script>
+    $("#projectModal").on("show.bs.modal", function (event) {
+      const button = $(event.relatedTarget);
+      const title = button.data("title");
+      const img = button.data("img");
+      const desc = button.data("desc");
+      const tags = button.data("tags");
+
+      $("#pmTitle").text(title);
+      $("#pmImg").attr("src", img);
+      $("#pmDesc").text(desc);
+      $("#pmTags").text(tags);
+    });
+  </script>
+ <script> // Тақырып режимін ауыстыру функциясы
+const toggleTheme = () => {
+  document.body.classList.toggle('dark-mode'); // Тақырыпты ауыстыру
+  const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+  localStorage.setItem('theme', currentTheme); // Режимді localStorage-қа сақтау
+};
+
+// Жүктелгенде сақталған режимді алу
+window.onload = () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode'); // Түнгі режимге ауыстыру
+  }
+};
+
+// Тақырып ауыстыру батырмасын басқанда
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+</script>
+
+</body>
+</html>
